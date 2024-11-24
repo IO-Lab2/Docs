@@ -11,7 +11,7 @@ The database stores information about scientists, publications, and organization
 2. [Database Schema](#database-schema)
    - [Tables](#tables)
    - [Queries](#queries)
-   - [Relationships](#relationships)
+   
 
 
 
