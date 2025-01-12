@@ -1,6 +1,6 @@
-# Documentation for the `stack` Folder
+# Stack
 
-## Introduction
+## Description
 The `stack` folder contains configurations and files for running the application using Docker Compose and `.gitignore` rules to manage file exclusions in the version control system.
 
 ---
@@ -11,7 +11,13 @@ stack/
 ├── .gitignore
 └── compose.yml
 ```
-
+---
+## Running the Services
+1. Start the services:
+   ```bash
+   docker-compose up -d
+   ```
+2. Verify the API (`http://localhost:8000`) and the test service (`http://localhost`).
 ---
 
 ## Files
@@ -56,15 +62,6 @@ services:
     image: containrrr/watchtower
     command: --interval 600
 ```
-
----
-
-## Running the Services
-1. Start the services:
-   ```bash
-   docker-compose up -d
-   ```
-2. Verify the API (`http://localhost:8000`) and the test service (`http://localhost`).
 
 ---
 
