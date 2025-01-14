@@ -139,35 +139,35 @@ scrapy crawl pb_spider
 
 ### Main Files
 
-- **[`settings.py`](./scraper/knowledge_scraper/settings.py)**:  
+- **[`settings.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/knowledge_scraper/settings.py)**:  
   Configures Scrapy's behavior, including settings for Playwright, request handling, logging, and middleware. It enables retries, handles JavaScript-heavy pages, and integrates with custom pipelines and middlewares for data processing and storage.
 
-- **[`items.py`](./scraper/knowledge_scraper/items.py)**:  
+- **[`items.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/knowledge_scraper/items.py)**:  
   Defines data models for the scraper, including:
   - `ScientistItem`: Captures data about scientists (name, email, academic title, etc.).
   - `PublicationItem`: Stores publication details (title, journal, publisher, etc.).
   - `OrganizationItem`: Represents the hierarchical structure of organizations.
   - `BibliometricsItem`: Tracks metrics such as h-index and publication count.
 
-- **[`pipelines.py`](./scraper/knowledge_scraper/pipelines.py)**:  
+- **[`pipelines.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/knowledge_scraper/pipelines.py)**:  
   Processes, validates, and stores scraped data. It uses custom validation rules for scientists, publications, and organizations.
 
-- **[`pb_spider.py`](./scraper/knowledge_scraper/spiders/pb_spider.py)**:  
+- **[`pb_spider.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/knowledge_scraper/spiders/pb_spider.py)**:  
   The main spider that scrapes organizational data, scientist profiles, and publications. It handles hierarchical data extraction, navigates between related pages.
 
-- **[`expand_organizations.js`](./scraper/other/expand_organizations.js)**:  
+- **[`expand_organizations.js`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/other/expand_organizations.js)**:  
   A JavaScript utility for expanding hierarchical structures on organization pages, allowing the scraper to navigate through nested organizational data.
 
-- **[`database.py`](./scraper/scripts/database/database.py)**:  
+- **[`database.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/scripts/database/database.py)**:  
   Manages database connections using environment variables. It provides helper functions to establish and validate connections for data storage.
 
-- **[`data_manipulation.py`](./scraper/scripts/database/data_manipulation.py)**:  
+- **[`data_manipulation.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/scripts/database/data_manipulation.py)**:  
   Contains utilities for inserting or updating rows in the database. It ensures data consistency by checking for existing entries before performing updates.
 
-- **[`playwright.py`](./scraper/scripts/playwright.py)**:  
+- **[`playwright.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/scripts/playwright.py)**:  
   Handles interactions with Playwright for managing JavaScript-heavy pages. It optimizes the scraping process by aborting unnecessary requests, such as images or media.
 
-- **[`constants.py`](./scraper/constants.py)**:  
+- **[`constants.py`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/scraper/constants.py)**:  
   Defines constants and global variables used across the project, ensuring consistency and central management of settings like URLs and database keys.
 
 
@@ -175,7 +175,7 @@ scrapy crawl pb_spider
 
 ## Sample Output
 
-Example data extracted by the scraper is stored in `example_output.json`. Below is a sample of organizational data:
+Example data extracted by the scraper is stored in [`example_output.json`](https://github.com/IO-Lab2/PB-Scraper/blob/dev/docs/exaple_output.json). Below is a sample of organizational data:
 
 ```json
 [
