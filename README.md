@@ -93,7 +93,7 @@ l
 
 ## Main Files with Links to Detailed Documentation
 
-###  Srapers:
+###  Srapers
 
 [`sggw_scraper`](https://github.com/IO-Lab2/Docs/blob/dev/sggw_scraper.md), [`pb_scraper`](https://github.com/IO-Lab2/Docs/blob/dev/pb_scraper.md?plain=1), [`pw_scraper`](https://github.com/IO-Lab2/Docs/blob/dev/pw_scraper.md), [`punktoza_sraper`](https://github.com/IO-Lab2/Docs/blob/dev/punktoza_scraper.md)  automatically retrieves details about:
 
@@ -101,7 +101,7 @@ l
 - Scientific publications
 - Organizational structure of the university
 
-### [`Front-end`](https://github.com/IO-Lab2/Docs/blob/dev/front-end.md) 
+### [`Front-end`](https://github.com/IO-Lab2/Docs/blob/dev/front-end.md)
 The project is a Next.js app designed for searching, filtering, and comparing data on researchers, organizations, and publications. It provides a user-friendly interface with dynamic filtering and detailed information access.
 
 ### [`Api`](https://github.com/IO-Lab2/Docs/blob/dev/api.md)
