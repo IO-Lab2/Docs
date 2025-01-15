@@ -1,7 +1,7 @@
 # Stack
 
 ## Description
-The `stack` folder contains configurations and files for running the application using Docker Compose and `.gitignore` rules to manage file exclusions in the version control system.
+The `stack` repository contains configurations and files for running the application using Docker Compose and `.gitignore` rules to manage file exclusions in the version control system.
 
 ---
 
@@ -17,54 +17,18 @@ stack/
    ```bash
    docker-compose up -d
    ```
-2. Verify the API (`http://localhost:8000`) and the test service (`http://localhost`).
 ---
 
 ## Files
 
 ### `.gitignore`
-This file excludes temporary files, logs, directories such as `node_modules/`, and tool caches (e.g., `.playwright-cache/`).
-Example:
-```plaintext
-.DS_Store
-*.log
-node_modules/
-.playwright-cache/
-```
+This file excludes temporary files, logs, directories such as `letsencrypt`, and files containing sensitive information like `.env`
 
 ### `compose.yml`
 Defines Docker Compose services:
 
 - **`reverse-proxy` (Traefik):** A reverse proxy handling HTTP/HTTPS and automatic SSL certificates.
-- **`api`:** The application backend running on port `8000`, using the `.env` file for configuration.
-- **`watchtower`:** Automatically updates containers every `600` seconds.
+- **`api`:** The application handling request to the database running on port `8000`, using the `.env` file for configuration.
+- **`watchtower`:** Automatically checks for new versions of docker images used by other services and updates them if a new one is found.
+- **`front-end`:** Website's front end with which the user interacts.
 - **`whoami`:** A simple test service for verifying the configuration.
-
-Example configuration:
-```yaml
-version: '3'
-services:
-  reverse-proxy:
-    image: traefik:v3.2
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./letsencrypt:/letsencrypt
-      - /var/run/docker.sock:/var/run/docker.sock
-  api:
-    image: cubeofdestiny/api-image
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env
-  watchtower:
-    image: containrrr/watchtower
-    command: --interval 600
-```
-
----
-
-## Notes
-- **Security:** Protect the `.env` file.
-- **Extensibility:** Add services by modifying `compose.yml`.
